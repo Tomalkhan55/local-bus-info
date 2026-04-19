@@ -12,7 +12,7 @@ function BusDetails() {
   const to = searchParams.get('to')
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/buses/${id}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/buses/${id}`)
       .then(res => res.json())
       .then(data => {
         setBus(data)

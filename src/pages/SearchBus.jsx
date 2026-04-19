@@ -31,7 +31,7 @@ function SearchBus() {
   useEffect(() => {
     const fetchNames = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/buses/names/all`)
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/buses/names/all`)
         const data = await res.json()
         setAllBusNames(data)
       } catch (err) {
@@ -56,7 +56,7 @@ function SearchBus() {
     setSearched(true)
     try {
       const res = await fetch(
-        `http://localhost:5000/api/buses/search?from=${encodeURIComponent(f)}&to=${encodeURIComponent(t)}`
+        `${import.meta.env.VITE_API_URL}/api/buses/search?from=${encodeURIComponent(f)}&to=${encodeURIComponent(t)}`
       )
       const data = await res.json()
       setBuses(data)
@@ -72,7 +72,7 @@ function SearchBus() {
     setBusSearched(true)
     try {
       const res = await fetch(
-        `http://localhost:5000/api/buses/name?name=${encodeURIComponent(busName)}`
+        `${import.meta.env.VITE_API_URL}/api/buses/name?name=${encodeURIComponent(busName)}`
       )
       const data = await res.json()
       setBusResults(data)

@@ -15,7 +15,7 @@ function FareEstimator() {
   const toRef = useRef(null)
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/buses/stops/all')
+    fetch(`${import.meta.env.VITE_API_URL}/api/buses/stops/all`)
       .then(res => res.json())
       .then(data => setAllStops(data))
   }, [])
@@ -44,7 +44,7 @@ function FareEstimator() {
 
     try {
       const res = await fetch(
-        `http://localhost:5000/api/buses/search?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`
+        `${import.meta.env.VITE_API_URL}/api/buses/search?from=${encodeURIComponent(from)}&to=${encodeURIComponent(to)}`
       )
       const buses = await res.json()
 

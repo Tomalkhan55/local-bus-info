@@ -8,7 +8,7 @@ function BlogDetails() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/blogs/${id}`)
+    fetch(`${import.meta.env.VITE_API_URL}/api/blogs/${id}`)
       .then(res => res.json())
       .then(data => {
         setBlog(data)

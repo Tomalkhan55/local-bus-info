@@ -17,7 +17,7 @@ function SearchBox({ initialFrom = '', initialTo = '' }) {
   useEffect(() => {
     const fetchStops = async () => {
       try {
-        const res = await fetch('http://localhost:5000/api/buses/stops/all')
+        const res = await fetch(`${import.meta.env.VITE_API_URL}/api/buses/stops/all`)
         const data = await res.json()
         setAllStops(data)
       } catch (err) {
