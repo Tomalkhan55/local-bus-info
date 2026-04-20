@@ -9,7 +9,7 @@ function About() {
     },
     {
       name: 'Rifat',
-      id: '223208453',
+      id: '2233081560',
       role: 'Frontend Developer',
       desc: 'UI/UX Design এবং Frontend Development এর কাজ করেছেন।',
       emoji: '👨‍💻'
